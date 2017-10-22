@@ -9,7 +9,7 @@ import time
 import urllib2
 
 def download_webpage():
-	url = 'http://linuxacademy-static-blogpost.s3-website-us-east-1.amazonaws.com'
+	url = 'http://google.com'
 	response = urllib2.urlopen(url,timeout = 60)
 	return response.read()
 def elapse_time():
@@ -33,7 +33,7 @@ def elapsed_time(function_to_time):
 	return wrapper
 @elapsed_time # Decorator function that will be called and passed the subsequent functioas variable to decorator function
 def download_webpage():
-        url = 'http://linuxacademy-static-blogpost.s3-website-us-east-1.amazonaws.com'
+        url = 'http://google.com'
         response = urllib2.urlopen(url,timeout = 60)
         return response.read()
 webpage = download_webpage()
