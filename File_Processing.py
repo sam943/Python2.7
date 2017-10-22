@@ -16,6 +16,9 @@ with open(filename,'w') as file_handler:
 with open(filename,'a') as file_appender:
 	file_appender.write("Appending a new line into python file \n")
 """
+"""
+Exception for unable to find a file
+"""
 try:
 	#filename = '/var/log/notthere'
 	for line in open(filename):
