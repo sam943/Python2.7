@@ -1,0 +1,9 @@
+{
+    "course_name": "python", 
+    "id": 5, 
+    "videos": [
+        "strings", 
+        "classes", 
+        "json"
+    ]
+}
