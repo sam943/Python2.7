@@ -11,8 +11,8 @@ import os
 
 # define groups of webservers and databases
 env.roledefs = {
-	"webserver" : ["ec2-54-183-86-71.us-west-1.compute.amazonaws.com"],
-	"database" : ["ec2-54-183-86-71.us-west-1.compute.amazonaws.com"]
+	"webserver" : ["ec2-54-183-135-106.us-west-1.compute.amazonaws.com"],
+	"database" : ["ec2-54-183-135-106.us-west-1.compute.amazonaws.com"]
 }
 
 # define a special group called all so we can easily sendout commands to all servers
@@ -41,8 +41,9 @@ def setup_database():
 	tmpdir = "/tmp"
 	print("Thers is no way to download files. Just skipping it...")
 
+@roles("webserver")
 def install_webserver():
-	sudo ("yum -y install %s" % "".join(packages_required["webserver"]),pty=True)	
+	sudo ("yum -y install %s" % " ".join(packages_required["webserver"]),pty=True)	
         sudo("systemctl enable httpd.service",pty=True)
         sudo("systemctl start httpd.service",pty=True)
 
